@@ -1,0 +1,6 @@
+footer{
+    background-color: var(--col-red);
+}
+footer .CircleUp{
+    font-size: 30px;
+}

@@ -1,0 +1,40 @@
+.partAndDescription h2{
+    font-size: 35px;
+    color: var(--col-dark);
+}
+.partAndDescription h2::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--col-red);
+    top: 50px;
+    left: calc(50% - 25px);
+}    
+.partAndDescription p{
+    margin-top: 50px;
+    color: var(--col-dark-light);
+}
+.formContent{
+    position: relative;
+}
+.formImg{
+    max-width: 500px;
+    position: absolute;
+    bottom: 0;
+    left: -60%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+form button{
+    background-color: var(--col-red);
+    padding: 10px 30px;
+    border: none;
+}
+.iframeSource{
+    width: 100%; 
+    height: 300px;
+    border: 0;
+}
