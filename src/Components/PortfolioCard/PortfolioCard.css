@@ -1,0 +1,38 @@
+.card{
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow, .3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+.card-body a{
+    position: relative;
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--col-dark);
+    text-decoration: none;
+    cursor: pointer;
+}
+.card-body a:hover{
+    color: var(--col-red);
+}
+.card-body a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: -5px;
+    background-color: var(--col-red);
+    cursor: pointer;
+    transform: scale(0, 1);
+    transform-origin: 0% 100%;
+    transition: transform 0.5s ease;
+}
+.card-body a:hover::after{
+    transform: scale(1, 1);
+}

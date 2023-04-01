@@ -1,0 +1,38 @@
+#full,#web,#mobile{
+    color: var(--col-red);
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    background: var(--col-red-light);
+    margin: 10px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+#full:hover,#web:hover,#mobile:hover{
+    background: var(--col-blue);
+    color:  var(--col-blue);
+    letter-spacing: 0.25em;
+    box-shadow: 0 0 35px var(--col-blue);
+}
+#full::before,#web::before,#mobile::before{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 5px;
+    background: var(--col-red-light);
+    z-index: -1;
+}
+.animate {
+    animation: moveIn 1s ease-out;
+}
+@keyframes moveIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
