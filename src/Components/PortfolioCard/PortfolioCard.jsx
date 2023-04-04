@@ -7,7 +7,7 @@ const PortfolioCard = (props) => {
 
   return (
     <> 
-        <div className="col-sm-6 col-lg-4" key={props.key}>
+        <div className="col-sm-6 col-lg-4">
                 <div className="card">
                   <img src={props.img} className="card-img-top" alt={props.title} />
                   <div className="card-body">
