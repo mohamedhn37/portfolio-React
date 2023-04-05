@@ -25,7 +25,10 @@ form button{
 @media (max-width: 485px){
     .iframeSource{
         padding-bottom: 35px;
-    }   
+    }  
+    .suggestion{
+        visibility: hidden;
+    } 
 }
 
 /* -------------------------responsive----------------------- */

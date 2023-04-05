@@ -10,7 +10,7 @@ import imgReact from '../../images/react.png'
 import imgJs from '../../images/js.png'
 import imgBootstrap from '../../images/Bootstrap.png'
 import OMACodersCertificat from '../../images/onemillionarabecoder.png'
-import {SkillsCard , CertificateCard} from '../../Components/SkillsCard/SkillsCard'
+import {SkillsCard , CertificateCard} from '../../Components/Card/Card'
 
 
 
@@ -19,7 +19,7 @@ const Skills = () => {
     <>
         <div className="container py-4">
             <SectionHead title="Skills" description = "I have expertise in multiple programming languages, specialy JavaScript. I'm also proficient in web development technologies such as HTML, CSS, and React. My technical skills are complemented by my ability to communicate effectively and work collaboratively with clients and team members."/>
-            <div className="row skills my-4">
+            <div className="row m-auto skills my-4">
                 <div className="col-md-6">
                     <p className="skills-para">
                         To building websites and web applications I use modern

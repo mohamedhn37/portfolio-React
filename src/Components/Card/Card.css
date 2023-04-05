@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 .card-body a:hover{
-    color: var(--col-red);
+    color: var(--col-red) !important;
 }
 .card-body a::after{
     content: '';
@@ -35,4 +35,8 @@
 }
 .card-body a:hover::after{
     transform: scale(1, 1);
+}
+
+.skill{
+    cursor: pointer;
 }

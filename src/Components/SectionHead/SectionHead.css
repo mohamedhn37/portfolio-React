@@ -15,4 +15,5 @@
 .partAndDescription p{
     margin-top: 50px;
     color: var(--col-dark-light);
+    text-align: justify;
 }

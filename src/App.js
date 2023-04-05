@@ -1,23 +1,34 @@
 import React from "react";
 import {Routes, Route} from 'react-router-dom'
+import {DarkMode, GlobaleStyles, LightTheme, DarkTheme} from "./DarkMode";
+import styled,  {ThemeProvider} from "styled-components";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Pages/Home/Home";
 import Skills from "./Pages/Skills/Skills"
-import Contact from "./Pages/Contact/Contact";
+import Service from "./Pages/Service/Service"
 import Portfolio from "./Pages/Portfolio/Portfolio";
+import Contact from "./Pages/Contact/Contact";
+
 
 function App() {
+  const [theme, toggleTheme] = DarkMode()
+  const themeMode = theme === 'light' ? LightTheme : DarkTheme
+
   return (
-    <>
-      <Header/>
-      <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/Skills" element={<Skills/>}/>
-          <Route path="/Portfolio" element={<Portfolio/>}/>
-          <Route path="/Contact" element={<Contact/>}/>
-      </Routes>   
-      <Footer/>
+    <> 
+      <ThemeProvider theme={themeMode}>
+        <GlobaleStyles/>
+          <Header theme={theme} toggleTheme={toggleTheme}/>
+          <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/Skills" element={<Skills/>}/>
+              <Route path="/Service" element={<Service/>}/>
+              <Route path="/Portfolio" element={<Portfolio/>}/>
+              <Route path="/Contact" element={<Contact/>}/>
+          </Routes>   
+          <Footer/>
+      </ThemeProvider>
     </>
   );
 }

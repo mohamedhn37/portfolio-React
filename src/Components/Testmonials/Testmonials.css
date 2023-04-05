@@ -1,0 +1,25 @@
+.testimonials img{
+    width: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin: 0 auto;
+}
+.testimonials h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--col-dark);
+}
+.testimonials span{
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--col-second);
+}
+
+.testimonials p{
+    width: 80%;
+    margin: 0 auto 20px auto;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--col-dark-light);
+}

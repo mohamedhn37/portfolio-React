@@ -32,6 +32,14 @@ header{
 .social-media  .nav-link:hover{
     color: var(--col-red);
 }
+.moon{
+    font-size: 25px;
+    color: #D4D4D4;
+}
+.sun{
+    font-size: 25px;
+    color: #FFD700;
+}
 /********header*******/
 /* -------------------------responsive----------------------- */
 @media (max-width: 485px){

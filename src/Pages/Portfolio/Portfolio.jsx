@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import './Portfolio.css'
 import SectionHead from '../../Components/SectionHead/SectionHead'
-import PortfolioCard from '../../Components/PortfolioCard/PortfolioCard';
+import {PortfolioCard} from '../../Components/Card/Card';
 import imgForm from '../../images/form.png'
 import imgChipiwa from '../../images/chpiwa.png'
 import imgCafeFloret from '../../images/cafe-floret.png'
@@ -83,10 +83,12 @@ const Portfolio = () => {
     <>
       <div className="container py-4">
           <SectionHead title="Portfolio" description = "Check out some of my recent projects in web and mobile development. Each project highlights my skills and expertise in creating user-friendly and innovative solutions."/>
-          <div className="col-12 d-flex justify-content-center">
-              <button className="p-2" onClick={() => handleCategoryChange('fullproject')} id="full">Full Project</button>
-              <button className="p-2" onClick={() => handleCategoryChange('Web-App')} id="web">Web app</button>
-              <button className="p-2"  onClick={() => handleCategoryChange('Mobile-App')} id="mobile">Mobile app</button>
+          <div className="row m-auto">
+            <div className="col-12 d-flex justify-content-center">
+                <button className="p-2" onClick={() => handleCategoryChange('fullproject')} id="full">Full Project</button>
+                <button className="p-2" onClick={() => handleCategoryChange('Web-App')} id="web">Web app</button>
+                <button className="p-2"  onClick={() => handleCategoryChange('Mobile-App')} id="mobile">Mobile app</button>
+            </div>
           </div>
           <div className={`row text-center m-auto align-items-center mt-3 mb-5 g-5 ${animation ? 'animate' : ''}`}>
             {filteredProjects.map((project) => (
