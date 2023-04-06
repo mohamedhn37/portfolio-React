@@ -11,6 +11,10 @@
     --col-violet: #E80368;
     --col-yellow: #FFBB2C;
     --col-green: #11DBCF;
+    --col-sun: #FFA500;
+    --col-light-sun: #FFC107;
+    --col-moon: #ECECEC;
+    --col-light-moon: #F5F5F5
 }
 *{
     margin: 0;

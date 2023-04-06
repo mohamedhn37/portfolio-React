@@ -34,11 +34,11 @@ header{
 }
 .moon{
     font-size: 25px;
-    color: #D4D4D4;
+    color: #545454;
 }
 .sun{
     font-size: 25px;
-    color: #FFD700;
+    color: var(--col-sun);
 }
 /********header*******/
 /* -------------------------responsive----------------------- */

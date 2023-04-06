@@ -37,8 +37,8 @@ const Skills = () => {
                         <SkillsCard src={imgSql} alt="GitHub"/>
                     </div>
                 </div>
-                <div className="col-md-6 bg-light p-4 rounded-3">
-                    <div className="row">
+                <div className="col-md-6 bg-light p-4 rounded-3 my-5">
+                    <div className="row m-auto">
                         <SectionHead title="Certificate"/>
                         <CertificateCard title="One Million Arabe Coders" src={OMACodersCertificat}  alt="OMACodersCertificat"/>
                         <CertificateCard title="One Million Arabe Coders" src={OMACodersCertificat}  alt="OMACodersCertificat"/>                    </div>

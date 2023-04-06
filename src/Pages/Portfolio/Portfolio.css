@@ -1,4 +1,4 @@
-#full,#web,#mobile{
+/* #full,#web,#mobile{
     color: var(--col-red);
     font-size: 20px;
     font-weight: bold;
@@ -22,6 +22,34 @@
     border-radius: 5px;
     background: var(--col-red-light);
     z-index: -1;
+}
+
+} */
+
+#full,#web,#mobile{
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    font-size: 17px;
+    color: var(--col-init);
+    border-radius: 7px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+}
+  
+#full,#web,#mobile{
+    background: var(--col-blue);
+    box-shadow: 0 0 25px var(--col-blue);
+}
+  
+#full:hover,#web:hover,#mobile:hover {
+    box-shadow: 0 0 5px var(--col-blue),
+                0 0 25px var(--col-blue),
+                0 0 50px var(--col-blue),
+                0 0 100px var(--col-blue);
 }
 .animate {
     animation: moveIn 1s ease-out;
