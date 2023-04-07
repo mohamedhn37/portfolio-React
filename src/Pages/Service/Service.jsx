@@ -1,43 +1,63 @@
-import React from 'react'
+import React, { useState , useEffect } from 'react'
 import './Service.css'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation , Autoplay } from "swiper";
+import { addDoc , collection, onSnapshot, } from "firebase/firestore";
+import { db } from '../firebase'
+import toast, { Toaster } from 'react-hot-toast';
 import SectionHead from '../../Components/SectionHead/SectionHead'
 import Testmonials from '../../Components/Testmonials/Testmonials'
 import { ServiceCard } from '../../Components/Card/Card'
 import imgServiceWeb from "../../images/serviceDarw.png"
 import imgServiceApp from "../../images/APPdev.png"
-import imgServiceUIUX from "../../images/UIUX.png"
-import imgTestMonial1 from "../../images/testimonials-1.jpg"
-import imgTestMonial2 from "../../images/testimonials-2.jpg"
-import imgTestMonial3 from "../../images/testimonials-3.jpg"
+import imgReview from "../../images/reviewsDraw.png"
 
 
 const Service = () => {
-    const ClientsTestmonial = [
-        {
-            id: 1,
-            Name: 'Saul Goodman',
-            Job: 'Ceo & Founder',
-            Testmonial: 'Mohamed is a highly skilled and dedicated developer. He consistently goes above and beyond to ensure that his clients needs are met, and he delivers high-quality solutions on time and on budget ',
-            image: imgTestMonial1,
-        },
-        {
-            id: 2,
-            Name: 'Sara Wilson',
-            Job: 'Designer',
-            Testmonial: 'Working with Mohamed was an absolute pleasure. He is professional, knowledgeable, and passionate about what he does. He is also a great communicator and kept us informed throughout the project ',
-            image: imgTestMonial2,
-        },
-        {
-            id: 3,
-            Name: 'Jena Carlis',
-            Job: 'Store Owner',
-            Testmonial: 'Mohamed was able to take our complex requirements and turn them into a fully functional and user-friendly web application. He was always responsive and kept us informed throughout the development process. We were thrilled with the final product.',
-            image: imgTestMonial3,
-        },
-    ]
+    const [name, setName] = useState('')
+    const [job, setJob] = useState('')
+    const [review, setReview] = useState('')
+    const [image, setImage] = useState('')
+    const [data, setData] = useState([])
+    
+    useEffect(() => {
+      onSnapshot(collection(db, "reviews"), (res) => {
+        setData(res.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
+        console.log(data);
+      })
+    }, [data])
+
+    const handelImageChange = (e) => {
+        setImage(e.target.value)
+      }
+    const handelNameChange = (e) => {
+        setName(e.target.value)
+      }
+    const handelJobChange = (e) => {
+        setJob(e.target.value)
+      }
+    const handelReviewchange = (e) => {
+        setReview(e.target.value)
+      }
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (name.trim() !== '' && job.trim()!== '' && review.trim() !== '') { 
+          addDoc(collection(db, "reviews"), { image, job, name, review })
+            .then(() => {
+              toast.success('Votre message est bien envoyé!', { duration: 2000 });
+              setName('')
+              setImage('')
+              setJob('')
+              setReview('')
+            })
+            .catch(() => {
+              toast.error("Le message n'a pas pu être envoyé pour le moment, veuillez réessayer plus tard.")
+            })
+        } else {
+          toast.error("L'input est vide, veuillez remplir pour l'envoyer.");
+        }
+      }
 
     return (
         <>
@@ -48,7 +68,6 @@ const Service = () => {
                         <div className="row m-auto g-3">
                             <ServiceCard img={imgServiceWeb} title='Web design' />
                             <ServiceCard img={imgServiceApp} title='App design' />
-                            <ServiceCard img={imgServiceUIUX} title='UI/UX design' />
                         </div>
                     </div>
                     <div className='col-md-6 mt-5'>
@@ -65,13 +84,42 @@ const Service = () => {
                                 className="mySwiper" 
                                 >
                             { 
-                                ClientsTestmonial.map((testimonial) => {
+                                data.map((review) => {
                                     return <SwiperSlide>
-                                     <Testmonials key={testimonial.id} img={testimonial.image} clientName={testimonial.Name} clientJob={testimonial.Job} testmonial={testimonial.Testmonial}/>
+                                     <Testmonials key={review.id} img={review.image} clientName={review.name} clientJob={review.job} testmonial={review.review}/>
                                     </SwiperSlide> 
                                 })
                             }
                         </Swiper>
+                    </div>
+                </div>
+                <div className="row m-auto mt-4">
+                    <div className="col-md-6 offset-md-3 py-4 reviews position-relative">
+                            <h4 className='text-center fw-bold'>Add Your Reviews</h4>
+                            <form onSubmit={handleSubmit}>
+                                <div className="form-group mt-3">
+                                    <label htmlFor="image" className='mb-2 fw-bold text-danger'>Votre Image</label>
+                                    <input type="file" id="image" value={image} className="form-control" placeholder="Enter votre image " onChange={handelImageChange}/>
+                                </div>
+                                <div className="form-group mt-3">
+                                    <label htmlFor="name" className='mb-2 fw-bold text-danger'>Name</label>
+                                    <input type="text" id="name" value={name} className="form-control" placeholder="Enter votre nom " onChange={handelNameChange}/>
+                                </div>
+                                <div className="form-group mt-3">
+                                    <label htmlFor="job" className='mb-2 fw-bold text-danger'>Job</label>
+                                    <input type="text" id="job" value={job} className="form-control" placeholder="Enter votre travail " onChange={handelJobChange}/>
+                                </div>
+                                <div className="form-group mt-3">
+                                    <textarea className="form-control" name="Review" rows="5" placeholder="Review" required value={review} onChange={handelReviewchange}></textarea>
+                                 </div>
+                                <div className="form-group mt-3">
+                                    <button className="btn btn-danger">Envoyer</button>
+                                    <Toaster position="top-right" reverseOrder={false}/>
+                                </div>
+                            </form>
+                            <div className='reviewImg position-absolute'>
+                                <img src={imgReview} alt="reviewImg" />
+                            </div>
                     </div>
                 </div>
             </div>

@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import {
-  DarkMode,
-  GlobaleStyles,
-  LightTheme,
-  DarkTheme,
-} from "./DarkMode";
-import styled, { ThemeProvider } from "styled-components";
+import { GlobaleStyles, LightTheme,DarkTheme,} from "./DarkMode";
+import  { ThemeProvider } from "styled-components";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
 import Home from "./Pages/Home/Home";

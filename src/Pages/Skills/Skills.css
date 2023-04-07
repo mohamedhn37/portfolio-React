@@ -24,11 +24,11 @@
     opacity: 0.3;
 }
 /* -------------------------responsive----------------------- */
-@media (max-width: 485px){
+@media (max-width: 576px){
     .skills::after{ 
         width: 320px;
         height: 320px;
-        top: 13%;
+        top: 15%;
         left: 50%;
     }
     

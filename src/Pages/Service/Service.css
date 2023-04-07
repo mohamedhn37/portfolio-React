@@ -1,0 +1,14 @@
+.reviewImg{
+    top: 27%;
+    z-index: -1;
+    right: -50%;
+}
+
+/* -------------------------responsive----------------------- */
+@media (max-width: 768px){
+    .reviewImg{
+        top: 30%;
+        right: 0;
+    }
+}
+/* -------------------------responsive----------------------- */

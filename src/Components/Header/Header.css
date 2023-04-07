@@ -42,7 +42,7 @@ header{
 }
 /********header*******/
 /* -------------------------responsive----------------------- */
-@media (max-width: 485px){
+@media (max-width: 992px){
     .social-media{
         display: flex;
         flex-direction: row;

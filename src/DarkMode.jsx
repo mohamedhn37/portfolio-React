@@ -12,14 +12,14 @@ const GlobaleStyles = createGlobalStyle`
     body{
         background: ${({theme})=> theme.body} 
     }
-    h1, h2, .homeShortDescription, .partAndDescription p , .skills-para, .testimonials p, .testimonials h3{
+    h1, h2, .homeShortDescription, .partAndDescription p , .skills-para, .testimonials p, .testimonials h3, .reviews h4{
         color: ${({ theme }) => theme.text};
     }
     .partAndDescription h2 {
         color: ${({ theme }) =>
           theme.partAndDescriptionH2Color || theme.text};
     }
-    h1, .partAndDescription h2, .testimonials h3, .suggestion{
+    h1, .partAndDescription h2, .testimonials h3, .suggestion, .reviews h4, .reviews label{
         text-shadow: ${({ theme }) => theme.textShadow};
     }
     .skills::after{
