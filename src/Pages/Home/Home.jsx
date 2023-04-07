@@ -7,7 +7,7 @@ import MonImage from '../../images/MH.png';
 const Home = () => {
 
     const openCV = () => {
-        window.open('https://drive.google.com/file/d/1XKW2BhJq8s0Y57R1oEm53yWplqWAI5gW/view?usp=share_link');
+        window.open('https://drive.google.com/file/d/1XKW2BhJq8s0Y57R1oEm53yWplqWAI5gW/view?usp=sharing');
       }
   return (
     <>
@@ -17,7 +17,7 @@ const Home = () => {
             <h1 className="homeTitle">I BUILD BEAUTIFUL MODERN WEBSITES</h1>
             <p className="homeSubstitle">I'm Mohamed HANNAOUI | Full-Stack Developer</p>
             <p className='homeShortDescription'>I BUILD BEAUTIFUL MODERN WEBSITES I'm Mohamed HANNAOUI | Full-Stack Developer As a freelance Front-end developer, I've found that many clients enjoy my unique design style, high quality of work, and reasonable rates.</p>
-            <a href="/#" className="btn btn-danger rounded-pill px-5 py-2 text-white fw-bold">CONTACT ME</a>
+            <a href="/Contact" className="btn btn-danger rounded-pill px-5 py-2 text-white fw-bold">CONTACT ME</a>
           </div>
           <div className="col-md-5 text-center bg-light p-4 rounded-3">
             <figure className='figMH'>
