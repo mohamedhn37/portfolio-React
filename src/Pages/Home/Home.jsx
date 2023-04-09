@@ -7,7 +7,7 @@ import MonImage from '../../images/MH.png';
 const Home = () => {
 
     const openCV = () => {
-        window.open('https://drive.google.com/file/d/1XKW2BhJq8s0Y57R1oEm53yWplqWAI5gW/view?usp=sharing');
+        window.open('https://drive.google.com/file/d/1Tk9-5iHOzbvZo4fdCLxoUphe1wzzA6gj/view?usp=share_link');
       }
   return (
     <>

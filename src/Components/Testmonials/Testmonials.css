@@ -21,5 +21,9 @@
     font-size: 15px;
     font-style: italic;
     font-weight: bold;
-    color: var(--col-dark-light);
+    color: var(--col-dark);
+}
+.testimonials .quote{
+    margin: 0 10px;
+    color: var(--col-red);
 }

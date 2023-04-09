@@ -48,23 +48,8 @@ const CertificateCard = (props) => {
     </>
   )
 }
-const ServiceCard = (props) => {
-  return (
-    <>
-        <div className="col-md-6">
-                <div className="card">
-                  <img src={props.img} className="card-img-top img-fluid" alt={props.title} />
-                  <div className="card-body">
-                    <h5 className="card-title fw-bold fs-4">{props.title}</h5>
-                    <p className="card-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia itaque perferendis nesciunt quos cupiditate voluptatibus autem possimus. Id, error modi.
-                    </p>
-                  </div>
-                </div>
-        </div>
-    </>
-  )
-}
 
 
-export {PortfolioCard ,SkillsCard, CertificateCard, ServiceCard} 
+
+
+export {PortfolioCard ,SkillsCard, CertificateCard} 

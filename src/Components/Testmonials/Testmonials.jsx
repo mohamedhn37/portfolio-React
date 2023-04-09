@@ -12,7 +12,7 @@ const Testimonials = (props) => {
                   <h3>{props.clientName}</h3>
                   <span>{props.clientJob}</span>
                   <p>
-                    <FaQuoteLeft color="red" size={25}/>{props.testmonial}<FaQuoteRight color="red" size={25}/>
+                    <FaQuoteLeft size={25} className="quote"/>{props.testmonial}<FaQuoteRight  className="quote" size={25}/>
                   </p>
               </div> 
           </div>
