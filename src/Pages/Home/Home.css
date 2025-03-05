@@ -28,7 +28,7 @@
 }
 .homeTitle{
     font-weight: 900;
-    font-size: 4rem;
+    font-size: 2.60rem;
     line-height: 1.25;
     margin-bottom: 5px;
     position: relative;
@@ -42,6 +42,9 @@
     left: -40px;
     transform: translateX(-50%);
     animation: move 2s infinite ease-in-out;
+}
+.justify{
+    text-align: justify;
 }
 @keyframes move {
     0% {

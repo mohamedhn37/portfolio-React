@@ -8,7 +8,7 @@ import imgCafeFloret from '../../images/cafe-floret.png'
 import imgRestorent from '../../images/restorent.png'
 import imgGreenOffice from '../../images/green-office.png'
 import imgDonation from '../../images/donation-turk.png'
-
+import imgAirlinesDataProject from '../../images/DataProject.PNG'
 
 const Portfolio = () => {
   const projects = [
@@ -48,7 +48,7 @@ const Portfolio = () => {
       id: 5,
       title: 'Chippiwa',
       date: '06 Feb. 2023',
-      category: 'Mobile-App',
+      category: 'web-app',
       image: imgChipiwa,
       demoLink: 'https://mohamedhn37.github.io/Cheppiwa/',
     },
@@ -59,6 +59,14 @@ const Portfolio = () => {
       category: 'Mobile-App',
       image: imgDonation,
       demoLink: 'https://mohamedhn37.github.io/SaveTurk/',
+    },
+    {
+      id: 7,
+      title: 'Airlines Data Project',
+      date: '30 Feb. 2025',
+      category: 'Data-App',
+      image: imgAirlinesDataProject,
+      demoLink: 'https://web-production-25adf.up.railway.app/',
     },
   ];  
   const [animation, setAnimation] = useState(false);
@@ -87,7 +95,7 @@ const Portfolio = () => {
             <div className="col-12 d-flex justify-content-center">
                 <button className="p-2" onClick={() => handleCategoryChange('fullproject')} id="full">Full Project</button>
                 <button className="p-2" onClick={() => handleCategoryChange('Web-App')} id="web">Web app</button>
-                <button className="p-2"  onClick={() => handleCategoryChange('Mobile-App')} id="mobile">Mobile app</button>
+                <button className="p-2"  onClick={() => handleCategoryChange('Data-App')} id="mobile">Data app</button>
             </div>
           </div>
           <div className={`row text-center m-auto align-items-center mt-3 mb-5 g-5 ${animation ? 'animate' : ''}`}>
